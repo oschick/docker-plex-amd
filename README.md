@@ -5,6 +5,9 @@ A Plex Media Server docker container that enables VAAPI support for AMDGPU hardw
 This image uses [Linuxserver/Plex](https://hub.docker.com/r/linuxserver/plex) as its base image to ensure that Plex stays up-to-date
 
 ## Usage 
+See [Linuxserver's Parameters](https://github.com/linuxserver/docker-plex#Parameters) for more information on parameters. 
+
+`VERSION=docker` must be used. Using `latest` will create errors.
 
 ``` docker-compose
 services:
@@ -30,10 +33,11 @@ services:
       - TZ=${TZ}
       - PLEX_CLAIM=${YOUR_PLEX_CLAIM}
       - ADVERTISE_IP=http://${YOUR_IP}:32400
-      - ALLOWED_NETWORKS=${
+      - ALLOWED_NETWORKS=${YOUR_NETWORK}
       - HOSTNAME=${YOUR_HOST_NAME}
       - VERSION=docker
     volumes:
       - ./config:/config
       - /dev/shm:/transcode
+      - /your/media:/your/media
 ```
