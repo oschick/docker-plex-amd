@@ -5,10 +5,11 @@ A Plex Media Server docker container that enables VAAPI support for AMDGPU hardw
 This image uses [Linuxserver/Plex](https://hub.docker.com/r/linuxserver/plex) as its base image to ensure that Plex stays up-to-date
 
 ## Usage 
-See [Linuxserver's Parameters](https://github.com/linuxserver/docker-plex#Parameters) for more information on parameters. 
+- See [Linuxserver's Parameters](https://github.com/linuxserver/docker-plex#Parameters) for more information on parameters. 
+- `VERSION=docker` must be used. Using `latest` will create errors.
+- I use `/dev/shm/` as a RAMDISK for transcoding set to half the amount of my total RAM. Info on resizing [here](https://masukkhan.wordpress.com/2015/12/09/resize-devshm-filesystem-in-linux/)
 
-`VERSION=docker` must be used. Using `latest` will create errors.
-
+docker-compose example:
 ``` docker-compose
 services:
   plex:
