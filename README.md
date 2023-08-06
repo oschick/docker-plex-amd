@@ -3,7 +3,7 @@
 A Plex Media Server docker container that enables VAAPI support for AMDGPU hardware accelerated decoding.
 
 This image uses [Linuxserver/Plex](https://hub.docker.com/r/linuxserver/plex) as its base image to ensure that Plex stays up-to-date
-
+ 
 ## Usage 
 - See [Linuxserver's Parameters](https://github.com/linuxserver/docker-plex#Parameters) for more information on parameters. 
 - `VERSION=docker` must be used. Using `latest` will create errors.
